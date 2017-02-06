@@ -1,0 +1,38 @@
+<html>
+<head>
+<title> Patient login</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      var messages = {{ messages | safe }};
+      for (var i=0; i<messages.length; i++) {
+        alert(messages[i]);
+      }
+    </script>
+  {% endif %}
+{% endwith %}
+</head>
+<body>
+<h2>Patient Login</h2>
+{% for message in form.name.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+{% for message in form.id.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+  <form action="http://localhost:5000/patient" method=post>
+    {{ form.hidden_tag() }}
+      
+    {{ form.name.label }}<br>
+      {{ form.name }}
+               <br>
+     {{ form.id.label }}<br>
+      {{ form.id }}
+               <br>
+      
+      {{ form.submit }}
+               <br>
+</form>
+</body>
+</html>

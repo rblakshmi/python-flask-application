@@ -1,0 +1,28 @@
+<html>
+<head>
+<title> Book Display</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+<h1> <center>Enter the Book Details</center> </h1>
+<br><br><br>
+
+  <form action="http://localhost:5000/bookdisplay" method=post>
+    {{ form.hidden_tag() }}
+      
+    {{ form.bookCategory.label }}<br>
+      {{ form.bookCategory }}
+               <br>
+ {{ form.bookGenre.label }}<br>
+      {{ form.bookGenre }}
+               <br>
+ 
+      
+   
+
+      {{ form.submit }}
+               <br>
+</form>
+</body>
+</html>

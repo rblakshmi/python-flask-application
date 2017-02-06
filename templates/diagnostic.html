@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+   <body>
+   
+      <h2 style = "text-align: center;">Contact Form</h2>
+		
+      
+      
+      <form action = "http://localhost:4996/doctor/pdetails/diagnostic" method = post>
+         <fieldset>
+            <legend>Contact Form</legend>
+            {{ form.hidden_tag() }}
+            
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+              
+               
+                {{ form.clumpthickness.label }}<br>
+                  {{ form.clumpthickness }}
+                       <br>
+               {{ form.size_uniformity.label }}<br>
+                  {{ form.size_uniformity }}
+                   <br>
+                 {{ form.shape_uniformity.label }}<br>
+              {{ form.shape_uniformity }}
+               <br>
+                  {{ form.marginal_adhesion.label }}<br>
+                  {{ form.marginal_adhesion }}
+                   <br>
+                  {{ form.epithelial_size.label }}<br>
+                  {{ form.epithelial_size }}
+                       <br>
+                  {{ form.bare_nuclei.label }}<br>
+                  {{ form.bare_nuclei }}
+                       <br>
+                  {{ form.bland_cromatin.label }}<br>
+                  {{ form.bland_cromatin }}
+                       <br>
+              {{ form.normal_nuclei.label }}<br>
+              {{ form.normal_nuclei }}
+               <br>
+              {{ form.mitosis.label }}<br>
+              {{ form.mitosis }}
+               <br> 
+               
+               {{ form.language.label }}<br>
+               {{ form.language }}
+               <br>
+               {{ form.submit }}
+            </div>
+            
+         </fieldset>
+      </form>
+      
+   </body>
+</html>

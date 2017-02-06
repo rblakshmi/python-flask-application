@@ -1,0 +1,101 @@
+<html>
+<head>
+<title> ADD patient </title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+ {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      var messages = {{ messages | safe }};
+      for (var i=0; i<messages.length; i++) {
+        alert(messages[i]);
+      }
+    </script>
+  {% endif %}
+{% endwith %}
+</head>
+<body>
+<h1><centre> ADD Patient </centre></h1>
+{% for message in form2.id.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+{% for message in form2.name.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+{% for message in form2.clumpthickness.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+{% for message in form2.size_uniformity.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+{% for message in form2.shape_uniformity.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+{% for message in form2.marginal_adhesion.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+{% for message in form2.epithelial_size.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+{% for message in form2.bare_nuclei.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+{% for message in form2.bland_cromatin.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+{% for message in form2.normal_nuclei.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+{% for message in form2.mitosis.errors %}
+         <div>{{ message }}</div>
+      {% endfor %} 
+
+  <form action="http://localhost:5000/doctor/pdetails/padd" method=post>
+    {{ form2.hidden_tag() }}
+      
+    {{ form2.id.label }}<br>
+      {{ form2.id }}
+               <br>
+     {{ form2.name.label }}<br>
+      {{ form2.name }}
+               <br>
+     {{ form2.age.label }}<br>
+      {{ form2.age }}
+               <br>
+      
+    
+
+   
+      
+    {{ form2.clumpthickness.label }}<br>
+      {{ form2.clumpthickness }}
+               <br>
+   {{ form2.size_uniformity.label }}<br>
+      {{ form2.size_uniformity }}
+               <br>
+     {{ form2.shape_uniformity.label }}<br>
+      {{ form2.shape_uniformity }}
+               <br>
+      {{ form2.marginal_adhesion.label }}<br>
+      {{ form2.marginal_adhesion }}
+               <br>
+      {{ form2.epithelial_size.label }}<br>
+      {{ form2.epithelial_size }}
+               <br>
+      {{ form2.bare_nuclei.label }}<br>
+      {{ form2.bare_nuclei }}
+               <br>
+      {{ form2.bland_cromatin.label }}<br>
+      {{ form2.bland_cromatin }}
+               <br>
+      {{ form2.normal_nuclei.label }}<br>
+      {{ form2.normal_nuclei }}
+               <br>
+      {{ form2.mitosis.label }}<br>
+      {{ form2.mitosis }}
+               <br> 
+
+      {{ form2.predict }}
+               <br>
+</form>
+</body>
+</html>

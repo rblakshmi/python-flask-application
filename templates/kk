@@ -1,0 +1,18 @@
+clump_thickness= SelectField(label ="CLUMP THICKNESS", choices = ['1','2','3','4','5','6','7','8','9','10'])
+    size_uniformity= SelectField(label = "SIZE UNIFORMITY", choices = ['1','2','3','4','5','6','7','8','9','10'])
+    shape_uniformity = SelectField(label = "SHAPE UNIFORMITY ", choices = ['1','2','3','4','5','6','7','8','9','10'])
+    marginal_adhesion = SelectField(label = " MARGINAL ADHESION", choices = ['1','2','3','4','5','6','7','8','9','10'])
+    epithelial_size = SelectField(label = "EPITHELIAL SIZE", choices = ['1','2','3','4','5','6','7','8','9','10'])
+    bare_nuclei = SelectField(label = "BARE NUCLEI", choices = ['1','2','3','4','5','6','7','8','9','10'])
+    bland_cromatin = SelectField(label = "BLAND CROMATIN", choices = ['1','2','3','4','5','6','7','8','9','10'])
+    normal_nuclei = SelectField(label = "NORMAL NUCLEI", choices = ['1','2','3','4','5','6','7','8','9','10'])
+    mitosis = SelectField(label = "MITOSIS", choices = ['1','2','3','4','5','6','7','8','9','10'])
+    predict = SubmitField("predict") 
+    
+     form = DiagnosticDetail()
+    if request.method == 'POST':
+            return render_template('diagnostic.html', form = form)
+    elif request.method == 'GET':
+        return render_template('diagnostic.html',form = form)
+        
+        choices = [(')]
